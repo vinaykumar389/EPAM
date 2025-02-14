@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e3f2fd;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            width: 350px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        h2 {
+            margin-bottom: 15px;
+        }
+        input, select {
+            width: 90%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            display: block;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            padding: 10px;
+            border: none;
+            width: 100%;
+            cursor: pointer;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+        .switch {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .switch a {
+            color: #007bff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Login Form -->
+    <div class="container" id="login-container">
+        <h2>Login</h2>
+        <input type="email" id="login-email" placeholder="Enter Email">
+        <input type="password" id="login-password" placeholder="Enter Password">
+        <button onclick="validateLogin()">Login</button>
+        <p id="login-error" class="error"></p>
+        <p class="switch">Don't have an account? <a onclick="toggleForm()">Register here</a></p>
+    </div>
+
+    <!-- Registration Form -->
+    <div class="container" id="register-container" style="display: none;">
+        <h2>Register</h2>
+        <input type="text" id="name" placeholder="Full Name">
+        <input type="email" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="Password">
+        <select id="role">
+            <option value="">Select Role</option>
+            <option value="Student">Student</option>
+            <option value="Employee">Employee</option>
+        </select>
+        <input type="date" id="dob">
+        <button onclick="validateRegistration()">Register</button>
+        <p id="register-error" class="error"></p>
+        <p class="switch">Already have an account? <a onclick="toggleForm()">Login here</a></p>
+    </div>
+
+    <script>
+        function toggleForm() {
+            let login = document.getElementById("login-container");
+            let register = document.getElementById("register-container");
+            login.style.display = login.style.display === "none" ? "block" : "none";
+            register.style.display = register.style.display === "none" ? "block" : "none";
+        }
+
+        function validateLogin() {
+            let email = document.getElementById("login-email").value;
+            let password = document.getElementById("login-password").value;
+            let error = document.getElementById("login-error");
+
+            if (!email || !password) {
+                error.innerText = "All fields are required!";
+                return false;
+            }
+            error.innerText = "Login successful!";
+            return true;
+        }
+
+        function validateRegistration() {
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+            let role = document.getElementById("role").value;
+            let dob = document.getElementById("dob").value;
+            let error = document.getElementById("register-error");
+
+            if (!name || !email || !password || !role || !dob) {
+                error.innerText = "All fields are required!";
+                return false;
+            }
+
+            let birthDate = new Date(dob);
+            let today = new Date();
+            let age = today.getFullYear() - birthDate.getFullYear();
+            let monthDiff = today.getMonth() - birthDate.getMonth();
+
+            if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+                age--;
+            }
+
+            if (role === "Student" && age < 18) {
+                error.innerText = "Students must be at least 18 years old!";
+                return false;
+            }
+            if (role === "Employee" && age < 21) {
+                error.innerText = "Employees must be at least 21 years old!";
+                return false;
+            }
+
+            error.innerText = "Registration successful!";
+            return true;
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles with Multimedia</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        .article {
+            background: white;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        video, audio {
+            width: 100%;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Featured Articles</h1>
+
+    <div class="article">
+        <h2>Article 1: Nature's Beauty</h2>
+        <p>Explore the breathtaking landscapes and diverse wildlife that make our planet truly magnificent.</p>
+        <img src="nature.jpg" alt="Nature Image">
+        <video controls>
+            <source src="nature_video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <audio controls>
+            <source src="nature_audio.mp3" type="audio/mpeg">
+            Your browser does not support the audio tag.
+        </audio>
+    </div>
+
+    <div class="article">
+        <h2>Article 2: Space Exploration</h2>
+        <p>Discover the wonders of space, from distant galaxies to the latest innovations in space technology.</p>
+        <img src="space.jpg" alt="Space Image">
+        <video controls>
+            <source src="space_video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <audio controls>
+            <source src="space_audio.mp3" type="audio/mpeg">
+            Your browser does not support the audio tag.
+        </audio>
+    </div>
+
+    <div class="article">
+        <h2>Article 3: The World of Technology</h2>
+        <p>Learn about the latest advancements in technology and how they are shaping our future.</p>
+        <img src="technology.jpg" alt="Technology Image">
+        <video controls>
+            <source src="tech_video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <audio controls>
+            <source src="tech_audio.mp3" type="audio/mpeg">
+            Your browser does not support the audio tag.
+        </audio>
+    </div>
+
+</body>
+</html>

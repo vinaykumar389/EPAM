@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Different Tables</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        .bordered th, .bordered td {
+            border: 2px solid black;
+        }
+        .alternate tr:nth-child(odd) {
+            background-color: #f9f9f9;
+        }
+        .scrollable {
+            overflow-x: auto;
+            display: block;
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>1. Simple Employee Table</h2>
+    <table>
+        <tr>
+            <th>Employee</th>
+            <th>Position</th>
+            <th>Department</th>
+        </tr>
+        <tr>
+            <td>John Doe</td>
+            <td>Manager</td>
+            <td>HR</td>
+        </tr>
+        <tr>
+            <td>Jane Smith</td>
+            <td>Developer</td>
+            <td>IT</td>
+        </tr>
+    </table>
+
+    <h2>2. Bordered Product Table</h2>
+    <table class="bordered">
+        <tr>
+            <th>Item</th>
+            <th>Category</th>
+            <th>Price</th>
+        </tr>
+        <tr>
+            <td>TV</td>
+            <td>Electronics</td>
+            <td>$800</td>
+        </tr>
+        <tr>
+            <td>Refrigerator</td>
+            <td>Appliances</td>
+            <td>$1200</td>
+        </tr>
+    </table>
+
+    <h2>3. Alternate Row Colored Table</h2>
+    <table class="bordered alternate">
+        <tr>
+            <th>City</th>
+            <th>Population</th>
+        </tr>
+        <tr>
+            <td>New York</td>
+            <td>8.4M</td>
+        </tr>
+        <tr>
+            <td>London</td>
+            <td>9M</td>
+        </tr>
+        <tr>
+            <td>Tokyo</td>
+            <td>14M</td>
+        </tr>
+    </table>
+
+    <h2>4. Table with Rowspan and Colspan</h2>
+    <table class="bordered">
+        <tr>
+            <th rowspan="2">Category</th>
+            <th colspan="2">Details</th>
+        </tr>
+        <tr>
+            <th>Name</th>
+            <th>Quantity</th>
+        </tr>
+        <tr>
+            <td>Fruits</td>
+            <td>Apples</td>
+            <td>50</td>
+        </tr>
+        <tr>
+            <td>Vegetables</td>
+            <td>Carrots</td>
+            <td>30</td>
+        </tr>
+    </table>
+
+    <h2>5. Scrollable Table</h2>
+    <div class="scrollable">
+        <table class="bordered">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Address</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Emily</td>
+                <td>emily@example.com</td>
+                <td>123-456-7890</td>
+                <td>123 Main St, NY</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Michael</td>
+                <td>michael@example.com</td>
+                <td>987-654-3210</td>
+                <td>456 Elm St, LA</td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+</html>
